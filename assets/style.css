@@ -171,7 +171,7 @@ ul, ol { list-style: none; }
   letter-spacing: -0.04em; line-height: 1; color: var(--text);
   font-variant-numeric: tabular-nums;
 }
-.stat dt { order: 2; margin-top: 12px; color: var(--muted); font-size: .9375rem; line-height: 1.4; max-width: 24ch; }
+.stat dt { order: 2; margin-top: 12px; color: var(--muted); font-size: .9375rem; line-height: 1.4; max-width: 24ch; text-wrap: balance; }
 .stat { display: flex; flex-direction: column; }
 .stat dd { order: 1; }
 
