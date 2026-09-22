@@ -200,13 +200,14 @@ ul, ol { list-style: none; }
 .cell p { margin-top: 8px; color: var(--muted); font-size: .9688rem; line-height: 1.55; }
 .cell-copy { padding: clamp(22px, 2.4vw, 30px); }
 
-.cell-main   { grid-column: 1 / span 8; }
-.cell-phone  { grid-column: 9 / span 4; background: var(--accent-soft); border-color: var(--accent-line); }
-.cell-bracket{ grid-column: 1 / span 6; }
-.cell-venues { grid-column: 7 / span 6; background: var(--bg-2); padding: clamp(22px, 2.4vw, 30px); }
+.cell-main   { grid-column: 1 / span 7; }
+.cell-picker { grid-column: 8 / span 5; }
+.cell-note   { grid-column: span 6; padding: clamp(22px, 2.4vw, 30px); }
+.cell-accent { background: var(--accent-soft); border-color: var(--accent-line); }
+.cell-quiet  { background: var(--bg-2); }
 
-.cell-main .cell-copy h3 { font-size: clamp(1.35rem, 2vw, 1.6rem); max-width: 26ch; }
-.cell-main .cell-copy p { max-width: 58ch; font-size: 1rem; }
+.cell-main .cell-copy h3, .cell-picker .cell-copy h3 { font-size: clamp(1.3rem, 1.9vw, 1.55rem); max-width: 26ch; }
+.cell-main .cell-copy p, .cell-picker .cell-copy p { max-width: 58ch; font-size: 1rem; }
 /* Screenshots are always shown whole: cropped at a card boundary in the image
    itself, never clipped by CSS, and framed on all four sides. */
 .shot {
@@ -216,9 +217,8 @@ ul, ol { list-style: none; }
   transition: transform .5s var(--ease);
 }
 .shot img { width: 100%; height: auto; }
-.shot-main { margin: auto var(--inset) var(--inset); }
-.shot-bracket { margin: var(--inset) var(--inset) 0; }
-.cell-main:hover .shot, .cell-bracket:hover .shot { transform: translateY(-4px); }
+.shot-bottom { margin: auto var(--inset) var(--inset); }
+.cell-main:hover .shot, .cell-picker:hover .shot { transform: translateY(-4px); }
 
 .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 18px; }
 .tags li {
@@ -232,25 +232,28 @@ ul, ol { list-style: none; }
 .link-arrow i { transition: transform .2s var(--ease); }
 .link-arrow:hover i { transform: translate(2px, -2px); }
 
-.phone-frame {
-  margin: auto auto clamp(22px, 2.4vw, 30px);
-  width: calc(100% - 2 * clamp(22px, 2.4vw, 30px)); max-width: 300px;
-  border: 1px solid var(--accent-line); border-radius: 24px; overflow: hidden;
-  background: #f7f8fa; box-shadow: var(--shadow);
-  transition: transform .5s var(--ease);
+/* ---------- royal st george ---------- */
+.lead {
+  display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: clamp(28px, 4vw, 64px); align-items: start;
 }
-.phone-frame img { width: 100%; height: auto; }
-.cell-phone:hover .phone-frame { transform: translateY(-4px); }
-
-.venues { margin-top: 18px; }
-.venues li {
-  display: flex; justify-content: space-between; align-items: baseline; gap: 12px;
-  padding: 10px 0; font-size: 1rem;
+.lead-figures { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--line); }
+.lead-figures div { display: flex; flex-direction: column; padding: 26px 24px 26px 0; border-bottom: 1px solid var(--line); }
+.lead-figures div:nth-child(even) { padding-left: 24px; border-left: 1px solid var(--line); }
+.lead-figures dd {
+  order: 1; font-size: clamp(2.6rem, 5vw, 4rem); font-weight: 500; line-height: 1;
+  letter-spacing: -0.04em; color: var(--accent); font-variant-numeric: tabular-nums;
 }
-.venues li + li { border-top: 1px solid var(--line); }
-.venues .mono { font-size: .8rem; }
-.cell-venues { display: flex; flex-direction: column; }
-.venues-foot { margin-top: auto; padding-top: 18px; color: var(--accent); font-size: .875rem; }
+.lead-figures dt { order: 2; margin-top: 12px; color: var(--muted); font-size: .9375rem; line-height: 1.4; max-width: 26ch; text-wrap: balance; }
+.lead-copy {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--r);
+  padding: clamp(24px, 2.6vw, 34px);
+}
+.lead-copy h3 { font-size: clamp(1.4rem, 2.2vw, 1.75rem); font-weight: 600; letter-spacing: -0.02em; }
+.lead-when { margin-top: 4px; color: var(--faint); font-size: .8125rem; }
+.duties { margin-top: 20px; }
+.duties li { position: relative; padding: 10px 0 10px 18px; border-top: 1px solid var(--line); }
+.duties li::before { content: ""; position: absolute; left: 0; top: 1.35em; width: 8px; height: 1px; background: var(--accent); }
 
 /* ---------- other projects ---------- */
 .feature {
@@ -382,12 +385,10 @@ ul, ol { list-style: none; }
 
 /* ---------- tablet ---------- */
 @media (max-width: 1024px) {
-  .cell-main   { grid-column: 1 / -1; }
-  .cell-phone  { grid-column: 1 / -1; flex-direction: row; align-items: flex-end; }
-  .cell-phone .cell-copy { flex: 1; align-self: flex-start; }
-  .cell-phone .phone-frame { width: 280px; flex: none; margin: var(--gap) clamp(22px, 2.4vw, 30px) clamp(22px, 2.4vw, 30px) 0; }
-  .cell-bracket{ grid-column: 1 / span 6; }
-  .cell-venues { grid-column: 7 / span 6; }
+  .cell-main, .cell-picker { grid-column: 1 / -1; }
+  .cell-picker { flex-direction: row; align-items: flex-end; }
+  .cell-picker .cell-copy { flex: 1; align-self: flex-start; }
+  .cell-picker .shot-bottom { width: 55%; flex: none; margin-left: 0; }
   .projects .project:nth-child(n) { grid-column: 1 / -1; padding-left: 0; border-left: 0; }
   .project + .project { border-top: 1px solid var(--line); }
   .project { padding-bottom: 22px; }
@@ -407,9 +408,10 @@ ul, ol { list-style: none; }
   .stat:nth-child(n+3) { border-top: 1px solid var(--line); }
 
   .bento { grid-template-columns: 1fr; }
-  .cell-main, .cell-phone, .cell-bracket, .cell-venues { grid-column: 1 / -1; }
-  .cell-phone { flex-direction: column; align-items: stretch; }
-  .cell-phone .phone-frame { width: calc(100% - 44px); max-width: 300px; margin: 0 auto 22px; }
+  .cell-main, .cell-picker, .cell-note { grid-column: 1 / -1; }
+  .cell-picker { flex-direction: column; align-items: stretch; }
+  .cell-picker .shot-bottom { width: auto; margin-left: var(--inset); }
+  .lead { grid-template-columns: 1fr; }
 
   .feature { grid-template-columns: 1fr; }
   .result { grid-template-columns: 1fr; gap: 6px; }
