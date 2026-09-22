@@ -84,7 +84,39 @@ ul, ol { list-style: none; }
 .skip:focus { top: 12px; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
 
-/* ---------- nav (z-index scale: nav 20, skip link 30) ---------- */
+/* ---------- boot sequence (z-index scale: nav 20, skip link 30, boot 40) ---------- */
+html { scrollbar-gutter: stable; }   /* no layout jump when the overlay unlocks scrolling */
+.boot { display: none; }
+.boot-on .boot {
+  display: flex; align-items: center;
+  position: fixed; inset: 0; z-index: 40;
+  background: var(--bg);
+}
+.boot-inner { padding-bottom: 6vh; overflow: hidden; }
+.boot-log {
+  margin: 0; white-space: pre; line-height: 1.95;
+  font-size: clamp(12px, 1.2vw, 15px); color: var(--muted);
+}
+.boot-log .caret { vertical-align: -0.2em; }
+.boot-log .b-prompt, .boot-log .b-val { color: var(--text); }
+.boot-log .b-tag { color: var(--faint); }
+.boot-log .b-tag.ok, .boot-log .b-ready { color: var(--accent); }
+.boot-skip {
+  position: absolute; right: var(--pad); bottom: 24px; padding: 8px;
+  background: none; border: 0; color: var(--faint); font-size: .8125rem; cursor: pointer;
+}
+.boot-skip:hover { color: var(--text); }
+/* The exit: the whole screen lifts away on an accent scan line. */
+.boot-leaving .boot {
+  transform: translateY(-100%);
+  border-bottom: 2px solid var(--accent);
+  transition: transform .6s cubic-bezier(0.7, 0, 0.2, 1);
+}
+.boot-on:not(.boot-leaving) { overflow: hidden; }
+.boot-on:not(.boot-leaving) .hero-copy > *,
+.boot-on:not(.boot-leaving) .hero-photo { animation-play-state: paused; }
+
+/* ---------- nav ---------- */
 .nav {
   position: sticky; top: 0; z-index: 20;
   background: color-mix(in srgb, var(--bg) 82%, transparent);
