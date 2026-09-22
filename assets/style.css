@@ -88,14 +88,14 @@ ul, ol { list-style: none; }
 html { scrollbar-gutter: stable; }   /* no layout jump when the overlay unlocks scrolling */
 .boot { display: none; }
 .boot-on .boot {
-  display: flex; align-items: center;
+  display: flex; align-items: flex-start;   /* anchored: new lines append below, nothing re-centres */
   position: fixed; inset: 0; z-index: 40;
   background: var(--bg);
 }
-.boot-inner { padding-bottom: 6vh; overflow: hidden; }
+.boot-inner { padding-top: 30vh; overflow: hidden; }
 .boot-log {
   margin: 0; white-space: pre; line-height: 1.95;
-  font-size: clamp(12px, 1.2vw, 15px); color: var(--muted);
+  font-size: clamp(12px, 1.3vw, 17px); color: var(--muted);
 }
 .boot-log .caret { vertical-align: -0.2em; }
 .boot-log .b-prompt, .boot-log .b-val { color: var(--text); }

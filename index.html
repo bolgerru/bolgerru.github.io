@@ -26,10 +26,12 @@
     document.documentElement.classList.add('js');
     setTimeout(function () { if (!window.__rbReady) document.documentElement.classList.remove('js'); }, 2500);
     // Boot sequence overlay, switched on before first paint (never for reduced
-    // motion). Failsafe: if main.js never runs, drop it rather than trap the page.
+    // motion). Failsafe: unless a script that knows how to run the boot has
+    // started within 3s (slow network, or an old cached main.js), drop the
+    // overlay rather than trap the page behind it.
     if (!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) {
       document.documentElement.classList.add('boot-on');
-      setTimeout(function () { if (!window.__rbReady) document.documentElement.classList.remove('boot-on'); }, 4000);
+      setTimeout(function () { if (!window.__rbBoot) document.documentElement.classList.remove('boot-on'); }, 3000);
     }
   </script>
 
@@ -41,7 +43,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/geist-mono@5/500.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
   <link rel="preload" as="image" href="assets/img/russell-800.webp" imagesrcset="assets/img/russell-800.webp 800w, assets/img/russell-1400.webp 1400w" imagesizes="(min-width: 900px) 42vw, 100vw" type="image/webp">
-  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/style.css?v=b2e9db8c">
 </head>
 <body>
   <div class="boot" aria-hidden="true">
@@ -338,6 +340,6 @@
   </footer>
 
   <p class="sr-only" aria-live="polite" id="live"></p>
-  <script src="assets/main.js" defer></script>
+  <script src="assets/main.js?v=ca7a9c67" defer></script>
 </body>
 </html>

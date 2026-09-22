@@ -4,6 +4,7 @@
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   root.classList.add('js');
   window.__rbReady = true;
+  window.__rbBoot = true; // tells the <head> failsafe this script can run the boot overlay
 
   // ---------- theme toggle (dark by default, choice remembered) ----------
   const toggle = document.querySelector('.theme-toggle');
@@ -65,22 +66,25 @@
     const cursor = el('caret', '');
     log.append(promptEl, cursor);
 
-    let t = 150;
-    for (let i = 1; i <= prompt.length; i++) later(() => { promptEl.textContent = prompt.slice(0, i); }, (t += 10));
-    t += 180;
+    // Paced to be read: ~0.9s typing, a beat, one line every 360ms (each ticks
+    // to [ ok ] after 220ms), then a pause on "ready." before the wipe. ~4.2s.
+    const TYPE = 24, PAUSE = 300, LINE = 360, TICK = 220, HOLD = 800;
+    let t = 250;
+    for (let i = 1; i <= prompt.length; i++) later(() => { promptEl.textContent = prompt.slice(0, i); }, (t += TYPE));
+    t += PAUSE;
     steps.forEach(([label, value]) => {
       later(() => {
         const tag = el('b-tag', '[ .. ] ');
         const line = document.createElement('span');
         line.append('\n', tag, leader(label), el('b-val', value));
         log.insertBefore(line, cursor);
-        later(() => { tag.textContent = '[ ok ] '; tag.classList.add('ok'); }, 80);
+        later(() => { tag.textContent = '[ ok ] '; tag.classList.add('ok'); }, TICK);
       }, t);
-      t += 115;
+      t += LINE;
     });
-    later(() => log.insertBefore(el('b-ready', '\nready.'), cursor), (t += 60));
-    later(finish, t + 320);
-    setTimeout(finish, 4500); // hard cap, whatever happens
+    later(() => log.insertBefore(el('b-ready', '\nready.'), cursor), (t += 150));
+    later(finish, t + HOLD);
+    setTimeout(finish, 9000); // hard cap, whatever happens
   });
 
   // ---------- name decode: one short pass, sets the terminal tone ----------
