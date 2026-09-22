@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Russell Bolger</title>
+  <meta name="description" content="Economics and Computer Science at Trinity College Dublin. Founder of RaceFlow, the team racing scheduling software that has run 19 regattas.">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#0b0c0e">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Russell Bolger">
+  <meta property="og:description" content="I build software for the sport I race in. Founder of RaceFlow.">
+  <meta property="og:image" content="https://bolgerru.github.io/assets/og.jpg">
+  <meta property="og:url" content="https://bolgerru.github.io/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <!-- Set the theme before first paint so there is no flash. Dark is the default. -->
+  <script>
+    try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}
+    // Mark JS early so scroll-reveals start hidden without a flicker. Failsafe: if
+    // main.js never runs, show everything after 2.5s rather than leave it hidden.
+    document.documentElement.classList.add('js');
+    setTimeout(function () { if (!window.__rbReady) document.documentElement.classList.remove('js'); }, 2500);
+  </script>
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/geist-sans@5/400.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/geist-sans@5/500.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/geist-sans@5/600.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/geist-mono@5/400.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/geist-mono@5/500.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
+  <link rel="preload" as="image" href="assets/img/russell-800.webp" imagesrcset="assets/img/russell-800.webp 800w, assets/img/russell-1400.webp 1400w" imagesizes="(min-width: 900px) 42vw, 100vw" type="image/webp">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="wordmark" href="#top">Russell Bolger</a>
+      <nav aria-label="Primary">
+        <ul class="nav-links">
+          <li class="hide-sm"><a href="#work">Work</a></li>
+          <li class="hide-sm"><a href="#sailing">Sailing</a></li>
+          <li class="hide-sm"><a href="#experience">Experience</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="Switch to light theme">
+        <i class="ph ph-sun" aria-hidden="true"></i>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero wrap" id="top">
+      <div class="hero-copy">
+        <p class="hero-name mono"><span data-scramble>Russell Bolger</span><span class="caret" aria-hidden="true"></span></p>
+        <h1>I build software for the sport I race in.</h1>
+        <p class="lede">Economics and Computer Science at Trinity College Dublin. Founder of RaceFlow, which has run 19 regattas.</p>
+        <div class="ctas">
+          <a class="btn btn-primary" href="#work">View work</a>
+          <a class="btn btn-ghost" href="https://github.com/bolgerru" rel="noopener"><i class="ph ph-github-logo" aria-hidden="true"></i>GitHub</a>
+        </div>
+      </div>
+      <figure class="hero-photo">
+        <picture>
+          <source type="image/webp" srcset="assets/img/russell-800.webp 800w, assets/img/russell-1400.webp 1400w" sizes="(min-width: 900px) 42vw, 100vw">
+          <img src="assets/img/russell-800.jpg" srcset="assets/img/russell-800.jpg 800w, assets/img/russell-1400.jpg 1400w" sizes="(min-width: 900px) 42vw, 100vw"
+               width="1400" height="1400" alt="Russell Bolger smiling while hiking out on a dinghy, wearing a Royal St George Yacht Club racing bib" fetchpriority="high">
+        </picture>
+      </figure>
+    </section>
+
+    <!-- NUMBERS -->
+    <section class="stats wrap" aria-label="In numbers">
+      <dl class="stats-grid">
+        <div class="stat reveal"><dt>Regattas run on RaceFlow</dt><dd class="mono" data-count="19">19</dd></div>
+        <div class="stat reveal"><dt>Races scheduled at the 2026 Irish Schools Nationals</dt><dd class="mono" data-count="148">148</dd></div>
+        <div class="stat reveal"><dt>Instructors managed at the Royal St George</dt><dd class="mono" data-count="24">24</dd></div>
+        <div class="stat reveal"><dt>Sailors in the summer programme I ran</dt><dd class="mono" data-count="244">244</dd></div>
+      </dl>
+    </section>
+
+    <!-- RACEFLOW -->
+    <section class="section wrap" id="work">
+      <h2 class="section-title">RaceFlow</h2>
+      <p class="section-lede">A team racing regatta is a round robin of short races, often more than a hundred of them. RaceFlow schedules them, times them and publishes the results as they happen, so nobody has to shout them across the dinghy park.</p>
+
+      <div class="bento">
+        <article class="cell cell-main reveal">
+          <div class="cell-copy">
+            <h3>The scheduling system behind Irish team racing</h3>
+            <p>I spotted the gap from inside the sport, built the fix, and now license it to clubs. It has run 19 regattas since August 2025, and Nantucket Yacht Club became the first club in the United States to use it.</p>
+            <ul class="tags" aria-label="Built with">
+              <li>TypeScript</li><li>Next.js</li><li>React</li><li>WebSockets</li><li>Clerk</li><li>Tailwind CSS</li>
+            </ul>
+            <a class="link-arrow" href="https://teamracing.xyz" rel="noopener">teamracing.xyz<i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+          </div>
+          <div class="cell-media cell-media-bleed">
+            <picture>
+              <source media="(max-width: 767px)" type="image/webp" srcset="assets/img/rf-phone-schedule-720.webp">
+              <source media="(max-width: 767px)" srcset="assets/img/rf-phone-schedule-720.jpg">
+              <source type="image/webp" srcset="assets/img/rf-schedule-800.webp 800w, assets/img/rf-schedule-1400.webp 1400w" sizes="(min-width: 900px) 58vw, 100vw">
+              <img src="assets/img/rf-schedule-800.jpg" width="1400" height="1212" loading="lazy" decoding="async"
+                   alt="RaceFlow schedule for the Irish Schools Nationals 2026, showing finished races with each boat's finishing positions and the winning team">
+            </picture>
+          </div>
+        </article>
+
+        <article class="cell cell-phone reveal">
+          <div class="cell-copy">
+            <h3>Results on every phone at the venue</h3>
+            <p>Standings update live as each race is scored, with push notifications for the teams you follow.</p>
+          </div>
+          <div class="phone-frame">
+            <picture>
+              <source type="image/webp" srcset="assets/img/rf-phone-results-720.webp">
+              <img src="assets/img/rf-phone-results-720.jpg" width="720" height="1558" loading="lazy" decoding="async"
+                   alt="RaceFlow final results on a phone: Schull 1 first, Schull 2 second, SAC 1 third">
+            </picture>
+          </div>
+        </article>
+
+        <article class="cell cell-bracket reveal">
+          <div class="cell-media">
+            <picture>
+              <source type="image/webp" srcset="assets/img/rf-bracket-900.webp">
+              <img src="assets/img/rf-bracket-900.jpg" width="900" height="1224" loading="lazy" decoding="async"
+                   alt="RaceFlow knockout bracket showing the four quarter-finals and their winners">
+            </picture>
+          </div>
+          <div class="cell-copy">
+            <h3>Swiss pairing and knockouts, generated</h3>
+            <p>Pairings, rotations and brackets are built automatically, with verification scripts covering the edge cases.</p>
+          </div>
+        </article>
+
+        <article class="cell cell-venues reveal">
+          <h3>Where it has run</h3>
+          <ul class="venues">
+            <li>Irish Schools Nationals</li>
+            <li>Irish University Varsities</li>
+            <li>Munster Schools Championship</li>
+            <li>ITRAS</li>
+            <li>Nantucket Yacht Club <span class="mono muted">USA</span></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- OTHER PROJECTS -->
+    <section class="section wrap" id="projects">
+      <h2 class="section-title">Other projects</h2>
+
+      <article class="feature reveal">
+        <figure class="feature-media">
+          <picture>
+            <source type="image/webp" srcset="assets/img/fnl-team-race-900.webp 900w, assets/img/fnl-team-race-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw">
+            <img src="assets/img/fnl-team-race-900.jpg" srcset="assets/img/fnl-team-race-900.jpg 900w, assets/img/fnl-team-race-1600.jpg 1600w" sizes="(min-width: 900px) 58vw, 100vw"
+                 width="1600" height="900" loading="lazy" decoding="async"
+                 alt="First Not Last: six dinghies racing downwind to a leeward gate, with live team standings on the right">
+          </picture>
+        </figure>
+        <div class="feature-copy">
+          <h3>First Not Last</h3>
+          <p>A sailing game about umpired match and team racing. Learn in seven short lessons, then race real people online in 1v1 match races and 2v2 or 3v3 team races.</p>
+          <p class="muted">Fouls are judged on the water and cleared with penalty turns, as in real umpired racing.</p>
+          <p class="stack mono">Godot 4 / GDScript / Nakama / Docker</p>
+        </div>
+      </article>
+
+      <ul class="projects">
+        <li class="project reveal">
+          <h3>Trinity Sailing Video Library</h3>
+          <p>A private training library for Trinity College Sailing. Members upload race clips, tag them and comment on debriefs. Every bad tack, preserved forever.</p>
+          <p class="stack mono">Next.js / Postgres / Cloudflare R2</p>
+        </li>
+        <li class="project reveal">
+          <h3><a href="https://movie-swipe-eight.vercel.app" rel="noopener">Movie Match<i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></h3>
+          <p>Swipe through films with friends in real time. When everyone has liked the same one, it is a match, and the forty-minute debate is over.</p>
+          <p class="stack mono">React / Upstash Redis / Vercel / TMDB</p>
+        </li>
+        <li class="project reveal">
+          <h3>Rule of the Day</h3>
+          <p>A daily study log for the Racing Rules of Sailing 2025 to 2028. 118 cards in book order, with shared check-offs for the crew. Cheaper than losing a protest.</p>
+          <p class="stack mono">TypeScript / Vercel</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- SAILING -->
+    <section class="section wrap" id="sailing">
+      <h2 class="section-title">Sailing</h2>
+
+      <ol class="results">
+        <li class="result reveal">
+          <span class="result-year mono">2023</span>
+          <div>
+            <h3>Winner, Irish Sailing Junior Champions Cup</h3>
+            <p>The national champion of every class races off to decide the best under-18 sailor in Ireland.</p>
+          </div>
+        </li>
+        <li class="result reveal">
+          <span class="result-year mono">2026</span>
+          <div>
+            <h3>Winner, Irish University Sailing Association National Championship</h3>
+            <p>Racing for Trinity College Dublin.</p>
+          </div>
+        </li>
+        <li class="result reveal">
+          <span class="result-year mono">2025</span>
+          <div>
+            <h3>First place youth team, Wilson Trophy</h3>
+            <p>West Kirby, the leading international team racing regatta.</p>
+          </div>
+        </li>
+      </ol>
+
+      <ul class="results-more reveal">
+        <li>Captain, St Conleth's College, All-Ireland Schools Team Racing Champions</li>
+        <li>Third, Irish Team Racing Nationals 2025</li>
+        <li>Competed at the 29er and ILCA 4.7 World Championships</li>
+        <li>Irish Sailing Senior Instructor</li>
+      </ul>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section wrap" id="experience">
+      <h2 class="section-title">Experience</h2>
+
+      <div class="exp-grid">
+        <div>
+          <h3 class="group-label mono">Work</h3>
+          <ol class="timeline">
+            <li class="reveal">
+              <span class="when mono">Aug 2025 - Present</span>
+              <div><h4>Founder, RaceFlow</h4><p>Built and license the team racing scheduling system above.</p></div>
+            </li>
+            <li class="reveal">
+              <span class="when mono">Jun 2026 - Sep 2026</span>
+              <div><h4>Sailing Instructor, Nantucket Yacht Club</h4><p>Coached adults on J/70 keelboats and Melges 15 dinghies, and ran Sunday racing as Race Officer.</p></div>
+            </li>
+            <li class="reveal">
+              <span class="when mono">2023 - Present</span>
+              <div><h4>Senior Instructor, Royal St George Yacht Club</h4><p>Managed 24 instructors and 456 course places across 244 sailors, and organised the Junior Regatta for 100.</p></div>
+            </li>
+            <li class="reveal">
+              <span class="when mono">Sep 2025 - Present</span>
+              <div><h4>Club Representative, Trinity Sports Executive Committee</h4><p>Representing six clubs: Sailing, Equestrian, Golf, Ladies' Golf, Tennis and Netball.</p></div>
+            </li>
+            <li class="reveal">
+              <span class="when mono">2022 - 2023</span>
+              <div><h4>EisnerAmper and Davy</h4><p>An internship at EisnerAmper and the Davy Transition Year Programme.</p></div>
+            </li>
+          </ol>
+        </div>
+
+        <div>
+          <h3 class="group-label mono">Education</h3>
+          <ol class="timeline">
+            <li class="reveal">
+              <span class="when mono">2024 - 2028</span>
+              <div><h4>Economics and Computer Science</h4><p>Trinity College Dublin.</p></div>
+            </li>
+            <li class="reveal">
+              <span class="when mono">2018 - 2024</span>
+              <div><h4>St Conleth's College</h4><p>613 points in the Leaving Certificate, with H1s in Mathematics, Music, Physics, French and Spanish.</p></div>
+            </li>
+          </ol>
+
+          <h3 class="group-label mono">Toolbox</h3>
+          <dl class="toolbox reveal">
+            <div><dt>Code</dt><dd>Java, C++, ARM Assembly, TypeScript, GDScript</dd></div>
+            <div><dt>Web</dt><dd>React, Next.js, Tailwind CSS, WebSockets, Postgres</dd></div>
+            <div><dt>Tools</dt><dd>Git, Godot, Nakama, Docker, Vercel</dd></div>
+            <div><dt>Spoken</dt><dd>English, French, Spanish</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact wrap" id="contact">
+      <h2 class="section-title">Contact</h2>
+      <p class="section-lede">For internships, RaceFlow for your club, or a second opinion on a rules call.</p>
+      <div class="email-row reveal">
+        <a class="email mono" href="mailto:russellbolger06@gmail.com">russellbolger06@gmail.com</a>
+        <button class="copy" type="button" data-copy="russellbolger06@gmail.com">
+          <i class="ph ph-copy" aria-hidden="true"></i><span>Copy</span>
+        </button>
+      </div>
+      <ul class="socials reveal">
+        <li><a href="https://www.linkedin.com/in/russell-bolger-87343524b/" rel="noopener"><i class="ph ph-linkedin-logo" aria-hidden="true"></i>LinkedIn</a></li>
+        <li><a href="https://github.com/bolgerru" rel="noopener"><i class="ph ph-github-logo" aria-hidden="true"></i>GitHub</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer wrap">
+    <p class="mono muted">Russell Bolger, <span data-year>2026</span></p>
+    <p class="mono muted">Best viewed downwind.</p>
+  </footer>
+
+  <p class="sr-only" aria-live="polite" id="live"></p>
+  <script src="assets/main.js" defer></script>
+</body>
+</html>
