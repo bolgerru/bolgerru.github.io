@@ -45,6 +45,7 @@
   }
 
   // ---------- count-up for the numbers strip ----------
+  const fmt = new Intl.NumberFormat('en-IE');
   const countUp = (el) => {
     const end = parseInt(el.dataset.count, 10);
     if (!end || reduce) return;
@@ -52,7 +53,7 @@
     const t0 = performance.now();
     const step = (t) => {
       const p = Math.min(1, (t - t0) / dur);
-      el.textContent = Math.round(end * (1 - Math.pow(1 - p, 3)));
+      el.textContent = fmt.format(Math.round(end * (1 - Math.pow(1 - p, 3))));
       if (p < 1) requestAnimationFrame(step);
     };
     el.textContent = '0';
