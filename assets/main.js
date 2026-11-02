@@ -54,9 +54,9 @@
     const steps = [
       ['loading raceflow', '19 regattas'],
       ['scoring races', '1,550'],
-      ['briefing instructors', '24'],
-      ['checking protest room', 'empty'],
-      ['trimming sails', 'done'],
+      ['recording finishes', '9,300'],
+      ['loading first not last', 'live'],
+      ['reading economics', 'trinity'],
     ];
     const leader = (label) => `${label} ${'.'.repeat(Math.max(3, 26 - label.length - 1))} `;
     const el = (cls, text) => { const s = document.createElement('span'); s.className = cls; s.textContent = text; return s; };
