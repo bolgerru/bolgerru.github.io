@@ -1,0 +1,128 @@
+Russell Bolger
+Work
+Experience
+Sailing
+CV
+Contact
+I build software and study economics.
+Economics and Computer Science at Trinity College Dublin. RaceFlow has run 19 regattas. First Not Last is live on phone, in the browser, and on desktop.
+View work
+GitHub
+Regattas run on RaceFlow
+19
+Races scored on RaceFlow
+1,550
+Finishes recorded on RaceFlow
+9,300
+Sailors on RaceFlow
+1,884
+RaceFlow
+A team racing regatta is a round robin of short races, often more than a hundred of them. RaceFlow schedules them, times them and publishes the results as they happen, so nobody has to shout them across the dinghy park.
+The scheduling system behind Irish team racing
+I spotted the gap from inside the sport, built the fix, and now license it to clubs. It has run 19 regattas since August 2025.
+TypeScript
+Next.js
+React
+WebSockets
+Clerk
+Tailwind CSS
+Every regatta in one place
+Clubs open their event here for scoring, standings and race tools, from the Irish Schools Nationals to Nantucket Yacht Club, the first club in the United States to use it.
+teamracing.xyz
+Swiss pairing and knockouts, generated
+Pairings, rotations and brackets are built automatically, with verification scripts covering the edge cases.
+Results on every phone at the venue
+Standings update live as each race is scored, with push notifications for the teams you follow.
+First Not Last
+An online dinghy racing game with an umpire in every race. It is on the App Store, on Android, on Windows, Mac and Linux, and in the browser. One account keeps your rating across all of them.
+Real sailors, real rules
+Match races and team races, judged live on the Racing Rules of Sailing. You steer, the sails trim themselves, and fouls are cleared with penalty turns, the same way umpired racing works on the water.
+Ranked racing, a leaderboard every night, and seven lessons if you have never held a tiller. Then 1v1, or teams of two or three.
+Godot 4 / GDScript / Nakama / Docker
+firstnotlast.site
+Six places to play
+iPhone and iPad on the App Store. Android, Windows, Mac and Linux. In the browser, nothing to install, and you race the same people as the apps.
+A leaderboard every night
+From 21:00 to 22:00 Irish time the online modes become one Daily Racing queue. Three races in that hour put you on the night's board.
+Seven lessons, then live boats
+Steering, wind, penalty turns and match-race starts. The lessons need no account. Online racing is against other sailors.
+Other projects
+Trinity Sailing Video Library
+A private training library for Trinity College Sailing. Members upload race clips, tag them and comment on debriefs. Every bad tack, preserved forever.
+Next.js / Postgres / Cloudflare R2
+Movie Match
+Swipe through films with friends in real time. When everyone has liked the same one, it is a match, and the forty-minute debate is over.
+React / Upstash Redis / Vercel / TMDB
+Rule of the Day
+A daily study log for the Racing Rules of Sailing 2025 to 2028. 118 cards in book order, with shared check-offs for the crew. Cheaper than losing a protest.
+TypeScript / Vercel
+Aug 2025 - Present
+Founder, RaceFlow
+Built and license the team racing scheduling system above.
+2026 - Present
+Shipped the online racing game above, on the App Store, desktop, Android and in the browser.
+2022 - 2023
+EisnerAmper and Davy
+An internship at EisnerAmper and the Davy Transition Year Programme.
+Sep 2025 - Present
+Club Representative, Trinity Sports Executive Committee
+Representing six clubs: Sailing, Equestrian, Golf, Ladies' Golf, Tennis and Netball.
+Education
+2024 - 2028
+Economics and Computer Science
+Trinity College Dublin.
+2018 - 2024
+St Conleth's College
+613 points in the Leaving Certificate, with H1s in Mathematics, Music, Physics, French and Spanish.
+Toolbox
+Code
+Java, C++, ARM Assembly, TypeScript, GDScript
+Web
+React, Next.js, Tailwind CSS, WebSockets, Postgres
+Tools
+Git, Godot, Nakama, Docker, Vercel
+Spoken
+English, French, Spanish
+2023
+Winner, Irish Sailing Junior Champions Cup
+The national champion of every class races off to decide the best under-18 sailor in Ireland.
+2026
+Winner, Irish University Sailing Association National Championship
+Racing for Trinity College Dublin.
+2025
+First place youth team, Wilson Trophy
+West Kirby, the leading international team racing regatta.
+Captain, St Conleth's College, All-Ireland Schools Team Racing Champions
+Third, Irish Team Racing Nationals 2025
+Competed at the 29er and ILCA 4.7 World Championships
+Irish Sailing Senior Instructor
+Coaching
+Jun 2026 - Sep 2026
+Sailing Instructor, Nantucket Yacht Club
+Coached adults on J/70 keelboats and Melges 15 dinghies, and ran Sunday racing as Race Officer.
+Royal St George Yacht Club
+In summer 2025 I held the club's most senior coaching role, running its summer programme for 244 sailors, after two summers as an instructor.
+Instructors on my team
+24
+Course places across the summer
+456
+Sailors on the water in the busiest week, with 14 instructors
+~90
+Sailors at the Junior Regatta, which I organised
+100
+Senior Instructor
+Summer 2025
+Safety management on and off the water
+Daily operations and session planning
+Managing instructors across multiple groups
+Keeping parents in the loop
+Powerboat
+Safety Boat
+First Aid
+Safeguarding
+For internships, RaceFlow for your club, or First Not Last.
+russellbolger06@gmail.com
+Copy
+LinkedIn
+Russell Bolger,
+Best viewed downwind.

@@ -74,18 +74,32 @@
   // ---------- count-up for the numbers ----------
   const fmt = new Intl.NumberFormat('en-IE');
   const countUp = (el) => {
-    const end = parseInt(el.dataset.count, 10);
-    if (!end || reduce) return;
+    const target = () => parseInt(el.dataset.count, 10); // read per frame: live totals can land mid-count
+    if (!target() || reduce) return;
     const dur = 1100;
     const t0 = performance.now();
     const step = (t) => {
       const p = Math.min(1, (t - t0) / dur);
-      el.textContent = fmt.format(Math.round(end * (1 - Math.pow(1 - p, 3))));
+      el.textContent = fmt.format(Math.round(target() * (1 - Math.pow(1 - p, 3))));
       if (p < 1) requestAnimationFrame(step);
     };
     el.textContent = '0';
     requestAnimationFrame(step);
   };
+
+  // ---------- live RaceFlow totals; the figures in the HTML stay as the fallback ----------
+  fetch('https://teamracing.xyz/api/public-stats')
+    .then((r) => (r.ok ? r.json() : null))
+    .then((totals) => {
+      if (!totals) return;
+      document.querySelectorAll('[data-stat]').forEach((el) => {
+        const n = totals[el.dataset.stat];
+        if (!Number.isInteger(n) || n <= 0) return;
+        if (el.dataset.count) el.dataset.count = n;
+        el.textContent = fmt.format(n);
+      });
+    })
+    .catch(() => {});
 
   // ---------- reveal on scroll (IntersectionObserver, no scroll listeners) ----------
   const startReveals = () => {

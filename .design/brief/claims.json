@@ -1,0 +1,109 @@
+{
+  "version": 1,
+  "claims": [
+    {
+      "id": "C1",
+      "text": "RaceFlow has run 19 regattas",
+      "source": "Russell's own copy, index.html at e50b85a",
+      "check": "python .design/brief/claims_check.py \"RaceFlow has run 19 regattas\"",
+      "status": "verified",
+      "evidence": "found in e50b85a:index.html: RaceFlow has run 19 regattas"
+    },
+    {
+      "id": "C2",
+      "text": "1,550",
+      "source": "Russell's own copy, index.html at e50b85a",
+      "check": "python .design/brief/claims_check.py \"1,550\"",
+      "status": "verified",
+      "evidence": "found in e50b85a:index.html: 1,550"
+    },
+    {
+      "id": "C3",
+      "text": "9,300",
+      "source": "Russell's own copy, index.html at e50b85a",
+      "check": "python .design/brief/claims_check.py \"9,300\"",
+      "status": "verified",
+      "evidence": "found in e50b85a:index.html: 9,300"
+    },
+    {
+      "id": "C4",
+      "text": "1,884",
+      "source": "Russell's own copy, index.html at e50b85a",
+      "check": "python .design/brief/claims_check.py \"1,884\"",
+      "status": "verified",
+      "evidence": "found in e50b85a:index.html: 1,884"
+    },
+    {
+      "id": "C5",
+      "text": "613 points in the Leaving Certificate",
+      "source": "Russell's own copy, index.html at e50b85a",
+      "check": "python .design/brief/claims_check.py \"613 points in the Leaving Certificate\"",
+      "status": "verified",
+      "evidence": "found in e50b85a:index.html: 613 points in the Leaving Certificate"
+    },
+    {
+      "id": "C6",
+      "text": "programme for 244 sailors",
+      "source": "Russell's own copy, index.html at e50b85a",
+      "check": "python .design/brief/claims_check.py \"programme for 244 sailors\"",
+      "status": "verified",
+      "evidence": "found in e50b85a:index.html: programme for 244 sailors"
+    },
+    {
+      "id": "C7",
+      "text": "118 cards",
+      "source": "Russell's own copy, index.html at e50b85a",
+      "check": "python .design/brief/claims_check.py \"118 cards\"",
+      "status": "verified",
+      "evidence": "found in e50b85a:index.html: 118 cards"
+    },
+    {
+      "id": "C8",
+      "text": "the first club in the United States to use it",
+      "source": "Russell's own copy, index.html at e50b85a",
+      "check": "python .design/brief/claims_check.py \"the first club in the United States to use it\"",
+      "status": "verified",
+      "evidence": "found in e50b85a:index.html: the first club in the United States to use it"
+    },
+    {
+      "id": "C9",
+      "text": "Winner, Irish Sailing Junior Champions Cup",
+      "source": "Russell's own copy, index.html at e50b85a",
+      "check": "python .design/brief/claims_check.py \"Winner, Irish Sailing Junior Champions Cup\"",
+      "status": "verified",
+      "evidence": "found in e50b85a:index.html: Winner, Irish Sailing Junior Champions Cup"
+    },
+    {
+      "id": "C10",
+      "text": "Winner, Irish University Sailing Association National Championship",
+      "source": "Russell's own copy, index.html at e50b85a",
+      "check": "python .design/brief/claims_check.py \"Winner, Irish University Sailing Association National Championship\"",
+      "status": "verified",
+      "evidence": "found in e50b85a:index.html: Winner, Irish University Sailing Association National Championship"
+    },
+    {
+      "id": "C11",
+      "text": "First place youth team, Wilson Trophy",
+      "source": "Russell's own copy, index.html at e50b85a",
+      "check": "python .design/brief/claims_check.py \"First place youth team, Wilson Trophy\"",
+      "status": "verified",
+      "evidence": "found in e50b85a:index.html: First place youth team, Wilson Trophy"
+    },
+    {
+      "id": "C12",
+      "text": "Third, Irish Team Racing Nationals 2025",
+      "source": "Russell's own copy, index.html at e50b85a",
+      "check": "python .design/brief/claims_check.py \"Third, Irish Team Racing Nationals 2025\"",
+      "status": "verified",
+      "evidence": "found in e50b85a:index.html: Third, Irish Team Racing Nationals 2025"
+    },
+    {
+      "id": "C13",
+      "text": "53°20.7′N 6°15.5′W",
+      "source": "Wikipedia coordinates for Trinity College Dublin, 53.3444 -6.2577, read 2026-11-10",
+      "check": "",
+      "status": "verified",
+      "evidence": "Wikipedia API coordinates 53.3444, -6.2577 converted to degrees and decimal minutes on 2026-11-10"
+    }
+  ]
+}

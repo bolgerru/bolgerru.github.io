@@ -38,7 +38,7 @@
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,600&display=swap">
   <link rel="preload" as="image" href="assets/img/russell-800.webp" imagesrcset="assets/img/russell-800.webp 800w, assets/img/russell-1400.webp 1400w" imagesizes="(min-width: 768px) 38vw, 100vw" type="image/webp">
-  <link rel="stylesheet" href="assets/style.css?v=chart3">
+  <link rel="stylesheet" href="assets/style.css?v=chart6">
 </head>
 <body>
   <div class="boot" aria-hidden="true">
@@ -46,9 +46,9 @@
     <div class="boot-chart">
       <svg viewBox="0 0 100 100" preserveAspectRatio="none"><path vector-effect="non-scaling-stroke" d="M6 10L94 30 6 50 94 70 6 90"/></svg>
       <ol>
-        <li style="--i:0">RaceFlow <i>19 regattas</i></li>
-        <li style="--i:1">Races scored <i>1,550</i></li>
-        <li style="--i:2">Finishes recorded <i>9,300</i></li>
+        <li style="--i:0">RaceFlow <i><span data-stat="regattas">19</span> regattas</i></li>
+        <li style="--i:1">Races scored <i data-stat="races">1,550</i></li>
+        <li style="--i:2">Finishes recorded <i data-stat="finishes">9,300</i></li>
         <li style="--i:3">First Not Last <i>live</i></li>
         <li style="--i:4">Economics <i>Trinity</i></li>
       </ol>
@@ -61,7 +61,7 @@
   <header class="nav">
     <div class="wrap nav-inner">
       <a class="wordmark" href="#top"><span data-scramble>Russell Bolger</span></a>
-      <p class="position" aria-hidden="true">53°20.6′N 6°15.3′W</p>
+      <p class="position" aria-hidden="true">53°20.7′N 6°15.5′W</p>
       <nav aria-label="Primary">
         <ul class="nav-links">
           <li class="hide-sm"><a href="#work">Work</a></li>
@@ -86,7 +86,7 @@
       </svg>
       <div class="hero-copy">
         <h1>I build software and study economics.</h1>
-        <p class="lede">Economics and Computer Science at Trinity College Dublin. RaceFlow has run 19 regattas. First Not Last is live on phone, in the browser, and on desktop.</p>
+        <p class="lede">Economics and Computer Science at Trinity College Dublin. RaceFlow has run <span data-stat="regattas">19</span> regattas. First Not Last is live on phone, in the browser, and on desktop.</p>
         <p class="ctas">
           <a href="#work">View work</a>
           <a href="https://github.com/bolgerru" rel="noopener">GitHub</a>
@@ -105,10 +105,10 @@
     <section class="stats wrap" aria-label="In numbers">
       <svg class="leg leg-stats reveal" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path vector-effect="non-scaling-stroke" d="M0 0L18 8 46.7 14 47.5 44 72 42 73 62 100 66 0 86 0 100"/></svg>
       <dl class="soundings">
-        <div class="reveal"><dt>Regattas run on RaceFlow</dt><dd data-count="19">19</dd></div>
-        <div class="reveal"><dt>Races scored on RaceFlow</dt><dd data-count="1550">1,550</dd></div>
-        <div class="reveal"><dt>Finishes recorded on RaceFlow</dt><dd data-count="9300">9,300</dd></div>
-        <div class="reveal"><dt>Sailors on RaceFlow</dt><dd data-count="1884">1,884</dd></div>
+        <div class="reveal"><dt>Regattas run on RaceFlow</dt><dd data-stat="regattas" data-count="19">19</dd></div>
+        <div class="reveal"><dt>Races scored on RaceFlow</dt><dd data-stat="races" data-count="1550">1,550</dd></div>
+        <div class="reveal"><dt>Finishes recorded on RaceFlow</dt><dd data-stat="finishes" data-count="9300">9,300</dd></div>
+        <div class="reveal"><dt>Sailors on RaceFlow</dt><dd data-stat="sailors" data-count="1884">1,884</dd></div>
       </dl>
     </section>
 
@@ -121,7 +121,7 @@
       <article class="item item-main reveal">
         <div class="item-copy">
           <h3>The scheduling system behind Irish team racing</h3>
-          <p>I spotted the gap from inside the sport, built the fix, and now license it to clubs. It has run 19 regattas since August 2025.</p>
+          <p>I spotted the gap from inside the sport, built the fix, and now license it to clubs. It has run <span data-stat="regattas">19</span> regattas since August 2025.</p>
           <ul class="tags" aria-label="Built with">
             <li>TypeScript</li><li>Next.js</li><li>React</li><li>WebSockets</li><li>Clerk</li><li>Tailwind CSS</li>
           </ul>
@@ -383,6 +383,6 @@
   <div class="neat"></div>
 
   <p class="sr-only" aria-live="polite" id="live"></p>
-  <script src="assets/main.js?v=chart3" defer></script>
+  <script src="assets/main.js?v=chart5" defer></script>
 </body>
 </html>
