@@ -1,6 +1,6 @@
 # Handoff: full UI redesign of bolgerru.github.io
 
-Last updated 2026-11-10. Branch: `redesign/site-2026` (local only, not pushed, last commit d3365be). `main` is untouched and still live.
+Last updated 2026-11-10. Branch: `redesign/site-2026` (local only, not pushed, last commit dae6246 or later). `main` is untouched and still live.
 
 ## Goal
 Redesign the whole site in the design-director workflow, keeping all real content. Rules from Russell: never push or merge to `main` without asking; static HTML/CSS/JS; keep OG/meta tags, no-flash theme, reduced motion, no-JS fallback.
@@ -15,7 +15,8 @@ Redesign the whole site in the design-director workflow, keeping all real conten
 - Design review recorded: fix-then-ship (load 3, one must-fix, self-review only).
 
 ## In progress
-Russell is viewing the build locally and has been asked whether to push it live. No answer yet.
+Russell is reviewing the build locally. Royal St George now sits above Sailing. Waiting on: (a) go-ahead to push the route and the site; (b) the `C:\sailing-game` session changing the game UI to finish, then replace `assets/img/fnl-team-race-{900,1600}.{jpg,webp}` with a new First Not Last screenshot (1600x900, same names, update the alt text if the scene changes).
+The Browser pane caches `/` hard: append `?fresh=<anything>` or hard-reload, or it can show an old design.
 
 ## Next steps, in order
 1. Russell: deploy `feat/public-stats` in `sailing-event` to teamracing.xyz. Until then the page shows its static figures and logs a CORS error.
