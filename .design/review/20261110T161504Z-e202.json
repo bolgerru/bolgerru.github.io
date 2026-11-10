@@ -1,0 +1,82 @@
+{
+ "reviewer": "self",
+ "scores": {
+  "idea": [
+   4,
+   "The site is one Admiralty chart: magenta course line sails section to section onto waypoints. Repeatable in a sentence. Loses a point because the hero itself is still headline plus photo."
+  ],
+  "hierarchy": [
+   4,
+   "Phone fold reads H1 first at 52px, then photo; desktop H1 124px against 21px lede. Links are clearly secondary but View work is modest for a primary action."
+  ],
+  "copy": [
+   5,
+   "Fidelity step clean against all 128 lines of the previous site. Only additions: chart position and the Night label."
+  ],
+  "craft": [
+   4,
+   "Hover, focus, copy, boot skip and reduced motion verified by 17 behaviour checks. Course line lands exactly on waypoints at 1280 to 1920; simple leg below 1280."
+  ],
+  "brand": [
+   4,
+   "Tokens only; magenta reserved for navigation as on a chart. No brand pack exists to check against."
+  ],
+  "fit": [
+   4,
+   "Recomposed at 390 and 320: soundings to 2 columns, dedicated phone screenshots, timeline stacks. Recruiter path is one tap to work, CV and email."
+  ],
+  "truth": [
+   4,
+   "13 claims in the ledger pass. Twelve are checked against Russell's own copy, not independently; position checked against Wikipedia. Live totals replace figures once deployed."
+  ],
+  "distinctiveness": [
+   4,
+   "Three decisions: magenta restricted to navigation following chart convention; figures and dates set as italic soundings; Day and Night palettes taken from chart displays with a course line drawn into waypoints. All five SLOP tests pass, the boot is the most familiar move left."
+  ],
+  "load": [
+   3,
+   "857 words and about 10 screens on desktop. Kept deliberately because the brief forbids losing content, but it is long."
+  ]
+ },
+ "notes": [
+  {
+   "where": "gate render step, all viewports",
+   "what": "Console CORS error because /api/public-stats is not deployed on teamracing.xyz yet",
+   "why": "Live numbers will not appear and the page logs an error until it is",
+   "fix": "Merge and deploy feat/public-stats in sailing-event before merging this site",
+   "severity": "must-fix"
+  },
+  {
+   "where": "RaceFlow section, event picker screenshot",
+   "what": "The screenshot still shows older totals than the live figures above it",
+   "why": "A careful reader sees two different sets of numbers",
+   "fix": "Retake the screenshot from the live picker, or crop the totals panel",
+   "severity": "nice-to-have"
+  },
+  {
+   "where": "whole page",
+   "what": "Long at about ten desktop screens",
+   "why": "A screener gives it under a minute",
+   "fix": "Russell could cut or fold Other projects and the Toolbox",
+   "severity": "nice-to-have"
+  }
+ ],
+ "strengths": [
+  "Magenta only ever means navigation",
+  "Course line ending on each waypoint",
+  "Italic soundings for every figure and date",
+  "No cards anywhere",
+  "Full fallback without JS"
+ ],
+ "viewed": [
+  ".design/gate/20261110T161504Z-e202/shots/localhost-4173__phone-390x844__reduced__fold.png",
+  ".design/gate/20261110T161504Z-e202/shots/localhost-4173__mac-1512x820__reduced__fold.png"
+ ],
+ "compared_with": [
+  "personal-portfolios/shots/lynnandtonic.com/desktop__fold.png",
+  "personal-portfolios/shots/worksinprogress.co/desktop__fold.png"
+ ],
+ "verdict": "fix-then-ship",
+ "run_id": "20261110T161504Z-e202",
+ "recorded_at": "2026-11-10T16:19:01Z"
+}
