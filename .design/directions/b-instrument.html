@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>B: Instrument</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<script>if(location.hash==='#night')document.documentElement.dataset.theme='night'</script>
+<style>
+:root{--g:#d9ded0;--ink:#0b100c;--soft:#3f4a40;--line:#0b100c;--sig:#b80f25;--on:#d9ded0;color-scheme:light}
+[data-theme=night]{--g:#060a08;--ink:#e6f1dc;--soft:#9fb09f;--line:#2f3b31;--sig:#ff5a4f;--on:#060a08;color-scheme:dark}
+*{box-sizing:border-box;margin:0}html,body{overflow-x:clip}
+body{background:var(--g);color:var(--ink);font:400 17px/1.5 Archivo,sans-serif;font-stretch:100%}
+.m{font:400 13px/1.3 "IBM Plex Mono",monospace}
+.w{padding-inline:clamp(16px,2.2vw,32px);max-width:1680px;margin:auto}
+header{display:flex;justify-content:space-between;padding-block:14px;border-bottom:2px solid var(--line)}
+nav{display:flex;gap:18px}a{color:inherit}
+.name{font-weight:800;font-stretch:62%;font-size:clamp(84px,15.4vw,270px);line-height:.8;letter-spacing:-.022em;text-transform:uppercase;padding-block:.14em .08em;white-space:nowrap}
+.row{display:grid;grid-template-columns:repeat(12,1fr);gap:20px;border-top:2px solid var(--line);padding-block:20px}
+h1{grid-column:1/span 5;font-weight:700;font-stretch:75%;font-size:clamp(40px,4.8vw,76px);line-height:.98;letter-spacing:-.015em}
+.lede{grid-column:1/span 4;color:var(--soft)}
+.ph{grid-column:6/-1;grid-row:1/span 3}.ph img{display:block;width:100%;height:clamp(280px,34vw,520px);object-fit:cover;object-position:60% 22%}
+.go{grid-column:1/span 4;align-self:end;display:flex;gap:10px}
+.go a{padding:12px 18px;background:var(--sig);color:#fff;text-decoration:none;font-weight:700}.go a+a{background:none;color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
+.dials{display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid var(--line)}
+.dials div{padding:12px 16px 18px;border-left:2px solid var(--line)}.dials div:first-child{border-left:0;padding-left:0}
+.dials b{display:block;font-weight:800;font-stretch:62%;font-size:clamp(84px,12.6vw,214px);line-height:.88;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+h2{font-weight:800;font-stretch:62%;font-size:clamp(56px,8vw,128px);line-height:.9;text-transform:uppercase;padding-block:28px 12px}
+.board{list-style:none;padding:0;border-top:2px solid var(--line)}
+.board li{display:grid;grid-template-columns:90px 1fr auto;gap:20px;align-items:baseline;padding:12px 10px;border-bottom:1px solid var(--line)}
+.board li:first-child{background:var(--ink);color:var(--on)}
+.board strong{font-weight:700;font-stretch:80%;font-size:clamp(22px,2.4vw,34px);line-height:1.1}
+@media(max-width:767px){.h{display:none}.name{white-space:normal;font-size:29vw}.row>*{grid-column:1/-1!important;grid-row:auto!important}.dials{grid-template-columns:1fr 1fr}.dials div:nth-child(3){border-left:0;padding-left:0}.dials div:nth-child(n+3){border-top:2px solid var(--line)}.dials b{font-size:27vw}.board li{grid-template-columns:48px 1fr}.board .x{display:none}}
+</style></head><body>
+<div class="w">
+<header class="m"><span>Economics and Computer Science, Trinity College Dublin</span><nav><a class="h" href="#">Work</a><a class="h" href="#">Experience</a><a class="h" href="#">Sailing</a><a href="#">CV</a><a href="#">Contact</a></nav></header>
+<p class="name">Russell Bolger</p>
+<section class="row">
+<h1>I build software and study economics.</h1>
+<figure class="ph"><img src="../../assets/img/russell-1400.jpg" alt="Russell Bolger hiking out on a dinghy"></figure>
+<p class="lede">RaceFlow has run 19 regattas. First Not Last is live on phone, in the browser, and on desktop.</p>
+<p class="go"><a href="#">View work</a><a href="#">GitHub</a></p>
+</section>
+<section class="dials">
+<div><span class="m">Regattas run on RaceFlow</span><b>19</b></div>
+<div><span class="m">Races scored on RaceFlow</span><b>1,550</b></div>
+<div><span class="m">Finishes recorded on RaceFlow</span><b>9,300</b></div>
+<div><span class="m">Sailors on RaceFlow</span><b>1,884</b></div>
+</section>
+<section><h2>Sailing</h2>
+<ol class="board">
+<li><span class="m">2023</span><strong>Winner, Irish Sailing Junior Champions Cup</strong><span class="m x">The best under-18 sailor in Ireland</span></li>
+<li><span class="m">2026</span><strong>Winner, Irish University Sailing Association National Championship</strong><span class="m x">Trinity College Dublin</span></li>
+<li><span class="m">2025</span><strong>First place youth team, Wilson Trophy</strong><span class="m x">West Kirby</span></li>
+</ol></section>
+</div>
+</body></html>

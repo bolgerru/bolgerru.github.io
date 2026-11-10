@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A: Chart</title>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&display=swap">
+<script>if(location.hash==='#night')document.documentElement.dataset.theme='night'</script>
+<style>
+:root{--ground:#eef0e3;--shoal:#d3e4e4;--ink:#10201f;--soft:#47584f;--line:#a9b5a6;--mag:#a0005b;color-scheme:light}
+[data-theme=night]{--ground:#091316;--shoal:#10262c;--ink:#c4d2c9;--soft:#8fa39b;--line:#2d4247;--mag:#ff7ab8;color-scheme:dark}
+*{box-sizing:border-box;margin:0}html,body{overflow-x:clip}
+body{background:var(--ground);color:var(--ink);font:400 17px/1.55 Switzer,sans-serif}
+.neat{height:10px;background:repeating-linear-gradient(90deg,var(--ink) 0 60px,transparent 60px 120px);border-block:1px solid var(--ink)}
+.w{max-width:1440px;margin:auto;padding-inline:clamp(20px,4vw,56px);position:relative}
+header{display:flex;justify-content:space-between;align-items:baseline;gap:24px;padding-block:18px;border-bottom:1px solid var(--line)}
+header b{font-weight:600}nav{display:flex;gap:clamp(12px,2vw,28px)}
+a{color:var(--mag);text-underline-offset:3px}nav a{color:var(--ink);text-decoration:none}
+.w8{font:italic 400 15px/1.2 Newsreader,serif;color:var(--soft)}
+.hero{display:grid;grid-template-columns:7fr 5fr;gap:clamp(24px,5vw,72px);align-items:end;padding-block:clamp(40px,6vw,88px) 40px;position:relative}
+.hero>*{position:relative}
+.contour{position:absolute;inset:0;width:100%;height:100%;fill:none;stroke:var(--shoal);stroke-width:2}
+h1{font-weight:500;font-size:clamp(52px,8vw,124px);line-height:.95;letter-spacing:-.045em;text-wrap:balance}
+.lede{margin-top:28px;max-width:44ch;font-size:clamp(18px,1.5vw,21px);color:var(--soft)}
+.go{margin-top:24px;display:flex;gap:24px;font-weight:500}
+figure{border:1px solid var(--ink);padding:6px;background:var(--ground)}figure img{display:block;width:100%;aspect-ratio:1;object-fit:cover}
+.leg{position:relative;padding-block:24px 56px}
+.track{position:absolute;left:0;top:0;width:100%;height:100%;overflow:visible;fill:none;stroke:var(--mag);stroke-width:2}
+.snd{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:24px}.snd div{background:var(--ground);justify-self:start;padding:6px 14px 8px 0}
+.snd div:nth-child(2){margin-top:68px}.snd div:nth-child(3){margin-top:14px}.snd div:nth-child(4){margin-top:92px}
+.snd i{display:block;font:italic 400 clamp(52px,6.4vw,96px)/1 Newsreader,serif;font-feature-settings:"lnum","tnum";letter-spacing:-.02em}
+.snd span{font-size:15px;color:var(--soft)}
+h2{font-weight:500;font-size:clamp(36px,4.6vw,68px);letter-spacing:-.035em;line-height:1;display:flex;align-items:center;gap:18px}
+h2::before{content:"";flex:none;width:.52em;height:.52em;border:2px solid var(--mag);border-radius:50%;background:radial-gradient(circle,var(--mag) 0 18%,transparent 20%)}
+.rf{display:grid;grid-template-columns:5fr 7fr;gap:clamp(24px,5vw,72px);padding-block:40px 80px;border-top:1px solid var(--line)}
+.rf p{margin-top:20px;max-width:50ch;color:var(--soft)}
+.rf img{display:block;width:100%;height:auto;border:1px solid var(--ink)}
+@media(max-width:767px){nav a.h{display:none}.hero,.rf{grid-template-columns:1fr}.snd{grid-template-columns:1fr 1fr}.snd div:nth-child(n){margin-top:0}.w8.c{display:none}}
+</style></head><body>
+<div class="neat"></div>
+<div class="w">
+<header><b>Russell Bolger</b><span class="w8 c">53°20′N 6°15′W, Trinity College Dublin</span><nav><a class="h" href="#">Work</a><a class="h" href="#">Experience</a><a class="h" href="#">Sailing</a><a href="#">CV</a><a href="#">Contact</a></nav></header>
+<section class="hero">
+<svg class="contour" viewBox="0 0 1300 600" preserveAspectRatio="none"><path d="M-20 420C180 340 300 500 520 430S820 260 1320 320"/><path d="M-20 500C200 430 340 570 560 500S880 340 1320 400"/><path d="M-20 340C160 260 280 420 480 360S780 180 1320 240"/></svg>
+<div><h1>I build software and study economics.</h1>
+<p class="lede">Economics and Computer Science at Trinity College Dublin. RaceFlow has run 19 regattas. First Not Last is live on phone, in the browser, and on desktop.</p>
+<p class="go"><a href="#">View work</a><a href="#">GitHub</a></p></div>
+<figure><picture><img src="../../assets/img/russell-800.jpg" alt="Russell Bolger hiking out on a dinghy"></picture></figure>
+</section>
+<section class="leg">
+<svg class="track" viewBox="0 0 1300 260" preserveAspectRatio="none"><path vector-effect="non-scaling-stroke" d="M30 0L170 92 500 34 820 118 1180 60 1290 250" stroke-dasharray="14 7"/></svg>
+<div class="snd">
+<div><i>19</i><span>Regattas run on RaceFlow</span></div>
+<div><i>1,550</i><span>Races scored on RaceFlow</span></div>
+<div><i>9,300</i><span>Finishes recorded on RaceFlow</span></div>
+<div><i>1,884</i><span>Sailors on RaceFlow</span></div>
+</div></section>
+<section class="rf"><div><h2>RaceFlow</h2><p>A team racing regatta is a round robin of short races, often more than a hundred of them. RaceFlow schedules them, times them and publishes the results as they happen, so nobody has to shout them across the dinghy park.</p><p><a href="#">teamracing.xyz</a></p></div>
+<img src="../../assets/img/rf-schedule-800.jpg" width="1400" height="870" alt="RaceFlow schedule"></section>
+</div>
+</body></html>
