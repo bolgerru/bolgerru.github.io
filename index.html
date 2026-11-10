@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Russell Bolger</title>
   <meta name="description" content="Economics and Computer Science at Trinity College Dublin. I build RaceFlow and First Not Last.">
-  <meta name="color-scheme" content="dark light">
-  <meta name="theme-color" content="#0b0c0e">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#eef0e3">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="Russell Bolger">
@@ -18,43 +18,50 @@
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 
-  <!-- Set the theme before first paint so there is no flash. Dark is the default. -->
+  <!-- Set the theme before first paint so there is no flash. Day is the default. -->
   <script>
     try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}
     // Mark JS early so scroll-reveals start hidden without a flicker. Failsafe: if
     // main.js never runs, show everything after 2.5s rather than leave it hidden.
     document.documentElement.classList.add('js');
     setTimeout(function () { if (!window.__rbReady) document.documentElement.classList.remove('js'); }, 2500);
-    // Boot sequence overlay, switched on before first paint (never for reduced
-    // motion). Failsafe: unless a script that knows how to run the boot has
-    // started within 3s (slow network, or an old cached main.js), drop the
-    // overlay rather than trap the page behind it.
+    // Boot overlay, switched on before first paint (never for reduced motion).
+    // Failsafe: unless a script that knows how to run the boot has started
+    // within 3s, drop the overlay rather than trap the page behind it.
     if (!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) {
       document.documentElement.classList.add('boot-on');
       setTimeout(function () { if (!window.__rbBoot) document.documentElement.classList.remove('boot-on'); }, 3000);
     }
   </script>
 
+  <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/geist-sans@5/400.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/geist-sans@5/500.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/geist-sans@5/600.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/geist-mono@5/400.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/geist-mono@5/500.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
-  <link rel="preload" as="image" href="assets/img/russell-800.webp" imagesrcset="assets/img/russell-800.webp 800w, assets/img/russell-1400.webp 1400w" imagesizes="(min-width: 900px) 42vw, 100vw" type="image/webp">
-  <link rel="stylesheet" href="assets/style.css?v=ff8c6afc">
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,600&display=swap">
+  <link rel="preload" as="image" href="assets/img/russell-800.webp" imagesrcset="assets/img/russell-800.webp 800w, assets/img/russell-1400.webp 1400w" imagesizes="(min-width: 768px) 38vw, 100vw" type="image/webp">
+  <link rel="stylesheet" href="assets/style.css?v=chart3">
 </head>
 <body>
   <div class="boot" aria-hidden="true">
-    <div class="wrap boot-inner"><pre class="boot-log mono"><span class="caret"></span></pre></div>
-    <button class="boot-skip mono" type="button" tabindex="-1">skip</button>
+    <div class="neat"></div>
+    <div class="boot-chart">
+      <svg viewBox="0 0 100 100" preserveAspectRatio="none"><path vector-effect="non-scaling-stroke" d="M6 10L94 30 6 50 94 70 6 90"/></svg>
+      <ol>
+        <li style="--i:0">RaceFlow <i>19 regattas</i></li>
+        <li style="--i:1">Races scored <i>1,550</i></li>
+        <li style="--i:2">Finishes recorded <i>9,300</i></li>
+        <li style="--i:3">First Not Last <i>live</i></li>
+        <li style="--i:4">Economics <i>Trinity</i></li>
+      </ol>
+    </div>
+    <button class="boot-skip" type="button" tabindex="-1">Skip</button>
   </div>
   <a class="skip" href="#main">Skip to content</a>
 
+  <div class="neat"></div>
   <header class="nav">
     <div class="wrap nav-inner">
-      <a class="wordmark" href="#top">Russell Bolger</a>
+      <a class="wordmark" href="#top"><span data-scramble>Russell Bolger</span></a>
+      <p class="position" aria-hidden="true">53°20.6′N 6°15.3′W</p>
       <nav aria-label="Primary">
         <ul class="nav-links">
           <li class="hide-sm"><a href="#work">Work</a></li>
@@ -64,9 +71,7 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-      <button class="theme-toggle" type="button" aria-label="Switch to light theme">
-        <i class="ph ph-sun" aria-hidden="true"></i>
-      </button>
+      <button class="theme-toggle" type="button" aria-label="Switch to night theme">Night</button>
     </div>
   </header>
 
@@ -74,19 +79,23 @@
 
     <!-- HERO -->
     <section class="hero wrap" id="top">
+      <svg class="contours" viewBox="0 0 1300 600" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M-20 420C180 340 300 500 520 430S820 260 1320 320"/>
+        <path d="M-20 500C200 430 340 570 560 500S880 340 1320 400"/>
+        <path d="M-20 340C160 260 280 420 480 360S780 180 1320 240"/>
+      </svg>
       <div class="hero-copy">
-        <p class="hero-name mono"><span data-scramble>Russell Bolger</span><span class="caret" aria-hidden="true"></span></p>
         <h1>I build software and study economics.</h1>
         <p class="lede">Economics and Computer Science at Trinity College Dublin. RaceFlow has run 19 regattas. First Not Last is live on phone, in the browser, and on desktop.</p>
-        <div class="ctas">
-          <a class="btn btn-primary" href="#work">View work</a>
-          <a class="btn btn-ghost" href="https://github.com/bolgerru" rel="noopener"><i class="ph ph-github-logo" aria-hidden="true"></i>GitHub</a>
-        </div>
+        <p class="ctas">
+          <a href="#work">View work</a>
+          <a href="https://github.com/bolgerru" rel="noopener">GitHub</a>
+        </p>
       </div>
-      <figure class="hero-photo">
+      <figure class="hero-photo inset">
         <picture>
-          <source type="image/webp" srcset="assets/img/russell-800.webp 800w, assets/img/russell-1400.webp 1400w" sizes="(min-width: 900px) 42vw, 100vw">
-          <img src="assets/img/russell-800.jpg" srcset="assets/img/russell-800.jpg 800w, assets/img/russell-1400.jpg 1400w" sizes="(min-width: 900px) 42vw, 100vw"
+          <source type="image/webp" srcset="assets/img/russell-800.webp 800w, assets/img/russell-1400.webp 1400w" sizes="(min-width: 768px) 38vw, 100vw">
+          <img src="assets/img/russell-800.jpg" srcset="assets/img/russell-800.jpg 800w, assets/img/russell-1400.jpg 1400w" sizes="(min-width: 768px) 38vw, 100vw"
                width="1400" height="1400" alt="Russell Bolger smiling while hiking out on a dinghy, wearing a Royal St George Yacht Club racing bib" fetchpriority="high">
         </picture>
       </figure>
@@ -94,62 +103,63 @@
 
     <!-- NUMBERS -->
     <section class="stats wrap" aria-label="In numbers">
-      <dl class="stats-grid">
-        <div class="stat reveal"><dt>Regattas run on RaceFlow</dt><dd class="mono" data-count="19">19</dd></div>
-        <div class="stat reveal"><dt>Races scored on RaceFlow</dt><dd class="mono" data-count="1550">1,550</dd></div>
-        <div class="stat reveal"><dt>Finishes recorded on RaceFlow</dt><dd class="mono" data-count="9300">9,300</dd></div>
-        <div class="stat reveal"><dt>Sailors on RaceFlow</dt><dd class="mono" data-count="1884">1,884</dd></div>
+      <svg class="leg leg-stats reveal" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path vector-effect="non-scaling-stroke" d="M0 0L18 8 46.7 14 47.5 44 72 42 73 62 100 66 0 86 0 100"/></svg>
+      <dl class="soundings">
+        <div class="reveal"><dt>Regattas run on RaceFlow</dt><dd data-count="19">19</dd></div>
+        <div class="reveal"><dt>Races scored on RaceFlow</dt><dd data-count="1550">1,550</dd></div>
+        <div class="reveal"><dt>Finishes recorded on RaceFlow</dt><dd data-count="9300">9,300</dd></div>
+        <div class="reveal"><dt>Sailors on RaceFlow</dt><dd data-count="1884">1,884</dd></div>
       </dl>
     </section>
 
     <!-- RACEFLOW -->
-    <section class="section wrap" id="work">
+    <section class="section section-first wrap" id="work">
+      <svg class="leg leg-compact reveal" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path vector-effect="non-scaling-stroke" d="M0 0L100 40 0 76 0 100"/></svg>
       <h2 class="section-title">RaceFlow</h2>
       <p class="section-lede">A team racing regatta is a round robin of short races, often more than a hundred of them. RaceFlow schedules them, times them and publishes the results as they happen, so nobody has to shout them across the dinghy park.</p>
 
-      <div class="bento">
-        <article class="cell cell-main reveal">
-          <div class="cell-copy">
-            <h3>The scheduling system behind Irish team racing</h3>
-            <p>I spotted the gap from inside the sport, built the fix, and now license it to clubs. It has run 19 regattas since August 2025.</p>
-            <ul class="tags" aria-label="Built with">
-              <li>TypeScript</li><li>Next.js</li><li>React</li><li>WebSockets</li><li>Clerk</li><li>Tailwind CSS</li>
-            </ul>
-          </div>
-          <div class="shot shot-bottom">
-            <picture>
-              <source media="(max-width: 767px)" type="image/webp" srcset="assets/img/rf-phone-schedule-720.webp" width="720" height="1175">
-              <source media="(max-width: 767px)" srcset="assets/img/rf-phone-schedule-720.jpg" width="720" height="1175">
-              <source type="image/webp" srcset="assets/img/rf-schedule-800.webp 800w, assets/img/rf-schedule-1400.webp 1400w" sizes="(min-width: 900px) 52vw, 100vw">
-              <img src="assets/img/rf-schedule-800.jpg" width="1400" height="870" loading="lazy" decoding="async"
-                   alt="RaceFlow schedule for the Irish Schools Nationals 2026, showing finished races with each boat's finishing positions and the winning team">
-            </picture>
-          </div>
-        </article>
+      <article class="item item-main reveal">
+        <div class="item-copy">
+          <h3>The scheduling system behind Irish team racing</h3>
+          <p>I spotted the gap from inside the sport, built the fix, and now license it to clubs. It has run 19 regattas since August 2025.</p>
+          <ul class="tags" aria-label="Built with">
+            <li>TypeScript</li><li>Next.js</li><li>React</li><li>WebSockets</li><li>Clerk</li><li>Tailwind CSS</li>
+          </ul>
+        </div>
+        <div class="inset shot">
+          <picture>
+            <source media="(max-width: 767px)" type="image/webp" srcset="assets/img/rf-phone-schedule-720.webp" width="720" height="1175">
+            <source media="(max-width: 767px)" srcset="assets/img/rf-phone-schedule-720.jpg" width="720" height="1175">
+            <source type="image/webp" srcset="assets/img/rf-schedule-800.webp 800w, assets/img/rf-schedule-1400.webp 1400w" sizes="(min-width: 768px) 60vw, 100vw">
+            <img src="assets/img/rf-schedule-800.jpg" width="1400" height="870" loading="lazy" decoding="async"
+                 alt="RaceFlow schedule for the Irish Schools Nationals 2026, showing finished races with each boat's finishing positions and the winning team">
+          </picture>
+        </div>
+      </article>
 
-        <article class="cell cell-picker reveal">
-          <div class="cell-copy">
-            <h3>Every regatta in one place</h3>
-            <p>Clubs open their event here for scoring, standings and race tools, from the Irish Schools Nationals to Nantucket Yacht Club, the first club in the United States to use it.</p>
-            <a class="link-arrow" href="https://teamracing.xyz" rel="noopener">teamracing.xyz<i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
-          </div>
-          <div class="shot shot-bottom">
-            <picture>
-              <source media="(max-width: 767px)" type="image/webp" srcset="assets/img/rf-phone-picker-720.webp" width="720" height="1486">
-              <source media="(max-width: 767px)" srcset="assets/img/rf-phone-picker-720.jpg" width="720" height="1486">
-              <source type="image/webp" srcset="assets/img/rf-picker-800.webp 800w, assets/img/rf-picker-1400.webp 1400w" sizes="(min-width: 900px) 36vw, 100vw">
-              <img src="assets/img/rf-picker-800.jpg" width="1400" height="1128" loading="lazy" decoding="async"
-                   alt="RaceFlow event picker listing upcoming regattas, with all-time totals of 314 teams, 1,884 sailors, 1,550 races scored and 9,300 finishes">
-            </picture>
-          </div>
-        </article>
+      <article class="item item-picker reveal">
+        <div class="inset shot">
+          <picture>
+            <source media="(max-width: 767px)" type="image/webp" srcset="assets/img/rf-phone-picker-720.webp" width="720" height="1486">
+            <source media="(max-width: 767px)" srcset="assets/img/rf-phone-picker-720.jpg" width="720" height="1486">
+            <source type="image/webp" srcset="assets/img/rf-picker-800.webp 800w, assets/img/rf-picker-1400.webp 1400w" sizes="(min-width: 768px) 46vw, 100vw">
+            <img src="assets/img/rf-picker-800.jpg" width="1400" height="1128" loading="lazy" decoding="async"
+                 alt="RaceFlow event picker listing upcoming regattas, with all-time totals of 314 teams, 1,884 sailors, 1,550 races scored and 9,300 finishes">
+          </picture>
+        </div>
+        <div class="item-copy">
+          <h3>Every regatta in one place</h3>
+          <p>Clubs open their event here for scoring, standings and race tools, from the Irish Schools Nationals to Nantucket Yacht Club, the first club in the United States to use it.</p>
+          <a class="link-arrow" href="https://teamracing.xyz" rel="noopener">teamracing.xyz<svg viewBox="0 0 10 10" aria-hidden="true"><path d="M2 8 8 2M3 2h5v5"/></svg></a>
+        </div>
+      </article>
 
-        <article class="cell cell-note cell-accent reveal">
+      <div class="notes">
+        <article class="reveal">
           <h3>Swiss pairing and knockouts, generated</h3>
           <p>Pairings, rotations and brackets are built automatically, with verification scripts covering the edge cases.</p>
         </article>
-
-        <article class="cell cell-note cell-quiet reveal">
+        <article class="reveal">
           <h3>Results on every phone at the venue</h3>
           <p>Standings update live as each race is scored, with push notifications for the teams you follow.</p>
         </article>
@@ -158,37 +168,40 @@
 
     <!-- FIRST NOT LAST -->
     <section class="section wrap" id="first-not-last">
+      <svg class="leg reveal" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path vector-effect="non-scaling-stroke" d="M0 0L100 42 0 76 0 100"/></svg>
       <h2 class="section-title">First Not Last</h2>
       <p class="section-lede">An online dinghy racing game with an umpire in every race. It is on the App Store, on Android, on Windows, Mac and Linux, and in the browser. One account keeps your rating across all of them.</p>
 
       <article class="feature reveal">
-        <figure class="feature-media">
+        <figure class="inset feature-media">
           <picture>
-            <source type="image/webp" srcset="assets/img/fnl-team-race-900.webp 900w, assets/img/fnl-team-race-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw">
-            <img src="assets/img/fnl-team-race-900.jpg" srcset="assets/img/fnl-team-race-900.jpg 900w, assets/img/fnl-team-race-1600.jpg 1600w" sizes="(min-width: 900px) 58vw, 100vw"
+            <source type="image/webp" srcset="assets/img/fnl-team-race-900.webp 900w, assets/img/fnl-team-race-1600.webp 1600w" sizes="(min-width: 1440px) 1328px, 100vw">
+            <img src="assets/img/fnl-team-race-900.jpg" srcset="assets/img/fnl-team-race-900.jpg 900w, assets/img/fnl-team-race-1600.jpg 1600w" sizes="(min-width: 1440px) 1328px, 100vw"
                  width="1600" height="900" loading="lazy" decoding="async"
                  alt="First Not Last: six dinghies racing downwind to a leeward gate, with live team standings on the right">
           </picture>
         </figure>
         <div class="feature-copy">
           <h3>Real sailors, real rules</h3>
-          <p>Match races and team races, judged live on the Racing Rules of Sailing. You steer, the sails trim themselves, and fouls are cleared with penalty turns, the same way umpired racing works on the water.</p>
-          <p class="muted">Ranked racing, a leaderboard every night, and seven lessons if you have never held a tiller. Then 1v1, or teams of two or three.</p>
-          <p class="stack mono">Godot 4 / GDScript / Nakama / Docker</p>
-          <a class="link-arrow" href="https://firstnotlast.site" rel="noopener">firstnotlast.site<i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+          <div>
+            <p>Match races and team races, judged live on the Racing Rules of Sailing. You steer, the sails trim themselves, and fouls are cleared with penalty turns, the same way umpired racing works on the water.</p>
+            <p class="muted">Ranked racing, a leaderboard every night, and seven lessons if you have never held a tiller. Then 1v1, or teams of two or three.</p>
+            <p class="stack">Godot 4 / GDScript / Nakama / Docker</p>
+            <a class="link-arrow" href="https://firstnotlast.site" rel="noopener">firstnotlast.site<svg viewBox="0 0 10 10" aria-hidden="true"><path d="M2 8 8 2M3 2h5v5"/></svg></a>
+          </div>
         </div>
       </article>
 
-      <div class="bento">
-        <article class="cell cell-third cell-accent reveal">
+      <div class="notes notes-3">
+        <article class="reveal">
           <h3>Six places to play</h3>
           <p>iPhone and iPad on the App Store. Android, Windows, Mac and Linux. In the browser, nothing to install, and you race the same people as the apps.</p>
         </article>
-        <article class="cell cell-third reveal">
+        <article class="reveal">
           <h3>A leaderboard every night</h3>
           <p>From 21:00 to 22:00 Irish time the online modes become one Daily Racing queue. Three races in that hour put you on the night's board.</p>
         </article>
-        <article class="cell cell-third cell-quiet reveal">
+        <article class="reveal">
           <h3>Seven lessons, then live boats</h3>
           <p>Steering, wind, penalty turns and match-race starts. The lessons need no account. Online racing is against other sailors.</p>
         </article>
@@ -197,68 +210,70 @@
 
     <!-- OTHER PROJECTS -->
     <section class="section wrap" id="projects">
+      <svg class="leg reveal" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path vector-effect="non-scaling-stroke" d="M0 0L62 55 0 76 0 100"/></svg>
       <h2 class="section-title">Other projects</h2>
 
       <ul class="projects">
         <li class="project reveal">
           <h3>Trinity Sailing Video Library</h3>
           <p>A private training library for Trinity College Sailing. Members upload race clips, tag them and comment on debriefs. Every bad tack, preserved forever.</p>
-          <p class="stack mono">Next.js / Postgres / Cloudflare R2</p>
+          <p class="stack">Next.js / Postgres / Cloudflare R2</p>
         </li>
         <li class="project reveal">
-          <h3><a href="https://movie-swipe-eight.vercel.app" rel="noopener">Movie Match<i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></h3>
+          <h3><a href="https://movie-swipe-eight.vercel.app" rel="noopener">Movie Match<svg viewBox="0 0 10 10" aria-hidden="true"><path d="M2 8 8 2M3 2h5v5"/></svg></a></h3>
           <p>Swipe through films with friends in real time. When everyone has liked the same one, it is a match, and the forty-minute debate is over.</p>
-          <p class="stack mono">React / Upstash Redis / Vercel / TMDB</p>
+          <p class="stack">React / Upstash Redis / Vercel / TMDB</p>
         </li>
         <li class="project reveal">
           <h3>Rule of the Day</h3>
           <p>A daily study log for the Racing Rules of Sailing 2025 to 2028. 118 cards in book order, with shared check-offs for the crew. Cheaper than losing a protest.</p>
-          <p class="stack mono">TypeScript / Vercel</p>
+          <p class="stack">TypeScript / Vercel</p>
         </li>
       </ul>
     </section>
 
     <!-- EXPERIENCE -->
     <section class="section wrap" id="experience">
+      <svg class="leg reveal" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path vector-effect="non-scaling-stroke" d="M0 0L100 30 0 76 0 100"/></svg>
       <h2 class="section-title">Experience</h2>
 
       <div class="exp-grid">
         <div>
-          <h3 class="group-label mono">Work</h3>
+          <h3 class="group-label">Work</h3>
           <ol class="timeline">
             <li class="reveal">
-              <span class="when mono">Aug 2025 - Present</span>
+              <span class="when">Aug 2025 - Present</span>
               <div><h4>Founder, RaceFlow</h4><p>Built and license the team racing scheduling system above.</p></div>
             </li>
             <li class="reveal">
-              <span class="when mono">2026 - Present</span>
+              <span class="when">2026 - Present</span>
               <div><h4>First Not Last</h4><p>Shipped the online racing game above, on the App Store, desktop, Android and in the browser.</p></div>
             </li>
             <li class="reveal">
-              <span class="when mono">2022 - 2023</span>
+              <span class="when">2022 - 2023</span>
               <div><h4>EisnerAmper and Davy</h4><p>An internship at EisnerAmper and the Davy Transition Year Programme.</p></div>
             </li>
             <li class="reveal">
-              <span class="when mono">Sep 2025 - Present</span>
+              <span class="when">Sep 2025 - Present</span>
               <div><h4>Club Representative, Trinity Sports Executive Committee</h4><p>Representing six clubs: Sailing, Equestrian, Golf, Ladies' Golf, Tennis and Netball.</p></div>
             </li>
           </ol>
         </div>
 
         <div>
-          <h3 class="group-label mono">Education</h3>
+          <h3 class="group-label">Education</h3>
           <ol class="timeline">
             <li class="reveal">
-              <span class="when mono">2024 - 2028</span>
+              <span class="when">2024 - 2028</span>
               <div><h4>Economics and Computer Science</h4><p>Trinity College Dublin.</p></div>
             </li>
             <li class="reveal">
-              <span class="when mono">2018 - 2024</span>
+              <span class="when">2018 - 2024</span>
               <div><h4>St Conleth's College</h4><p>613 points in the Leaving Certificate, with H1s in Mathematics, Music, Physics, French and Spanish.</p></div>
             </li>
           </ol>
 
-          <h3 class="group-label mono">Toolbox</h3>
+          <h3 class="group-label">Toolbox</h3>
           <dl class="toolbox reveal">
             <div><dt>Code</dt><dd>Java, C++, ARM Assembly, TypeScript, GDScript</dd></div>
             <div><dt>Web</dt><dd>React, Next.js, Tailwind CSS, WebSockets, Postgres</dd></div>
@@ -271,25 +286,26 @@
 
     <!-- SAILING -->
     <section class="section wrap" id="sailing">
+      <svg class="leg reveal" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path vector-effect="non-scaling-stroke" d="M0 0L82 48 0 76 0 100"/></svg>
       <h2 class="section-title">Sailing</h2>
 
       <ol class="results">
         <li class="result reveal">
-          <span class="result-year mono">2023</span>
+          <span class="result-year">2023</span>
           <div>
             <h3>Winner, Irish Sailing Junior Champions Cup</h3>
             <p>The national champion of every class races off to decide the best under-18 sailor in Ireland.</p>
           </div>
         </li>
         <li class="result reveal">
-          <span class="result-year mono">2026</span>
+          <span class="result-year">2026</span>
           <div>
             <h3>Winner, Irish University Sailing Association National Championship</h3>
             <p>Racing for Trinity College Dublin.</p>
           </div>
         </li>
         <li class="result reveal">
-          <span class="result-year mono">2025</span>
+          <span class="result-year">2025</span>
           <div>
             <h3>First place youth team, Wilson Trophy</h3>
             <p>West Kirby, the leading international team racing regatta.</p>
@@ -304,10 +320,10 @@
         <li>Irish Sailing Senior Instructor</li>
       </ul>
 
-      <h3 class="group-label mono">Coaching</h3>
+      <h3 class="group-label">Coaching</h3>
       <ol class="timeline">
         <li class="reveal">
-          <span class="when mono">Jun 2026 - Sep 2026</span>
+          <span class="when">Jun 2026 - Sep 2026</span>
           <div><h4>Sailing Instructor, Nantucket Yacht Club</h4><p>Coached adults on J/70 keelboats and Melges 15 dinghies, and ran Sunday racing as Race Officer.</p></div>
         </li>
       </ol>
@@ -315,20 +331,21 @@
 
     <!-- ROYAL ST GEORGE -->
     <section class="section wrap" id="leadership">
+      <svg class="leg reveal" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path vector-effect="non-scaling-stroke" d="M0 0L100 52 0 76 0 100"/></svg>
       <h2 class="section-title">Royal St George Yacht Club</h2>
       <p class="section-lede">In summer 2025 I held the club's most senior coaching role, running its summer programme for 244 sailors, after two summers as an instructor.</p>
 
       <div class="lead">
         <dl class="lead-figures reveal">
-          <div><dt>Instructors on my team</dt><dd class="mono" data-count="24">24</dd></div>
-          <div><dt>Course places across the summer</dt><dd class="mono" data-count="456">456</dd></div>
-          <div><dt>Sailors on the water in the busiest week, with 14 instructors</dt><dd class="mono">~90</dd></div>
-          <div><dt>Sailors at the Junior Regatta, which I organised</dt><dd class="mono" data-count="100">100</dd></div>
+          <div><dt>Instructors on my team</dt><dd data-count="24">24</dd></div>
+          <div><dt>Course places across the summer</dt><dd data-count="456">456</dd></div>
+          <div><dt>Sailors on the water in the busiest week, with 14 instructors</dt><dd>~90</dd></div>
+          <div><dt>Sailors at the Junior Regatta, which I organised</dt><dd data-count="100">100</dd></div>
         </dl>
 
         <div class="lead-copy reveal">
           <h3>Senior Instructor</h3>
-          <p class="lead-when mono">Summer 2025</p>
+          <p class="when">Summer 2025</p>
           <ul class="duties">
             <li>Safety management on and off the water</li>
             <li>Daily operations and session planning</li>
@@ -344,28 +361,28 @@
 
     <!-- CONTACT -->
     <section class="section contact wrap" id="contact">
+      <svg class="leg reveal" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path vector-effect="non-scaling-stroke" d="M0 0L44 60 0 76 0 100"/></svg>
       <h2 class="section-title">Contact</h2>
       <p class="section-lede">For internships, RaceFlow for your club, or First Not Last.</p>
       <div class="email-row reveal">
-        <a class="email mono" href="mailto:russellbolger06@gmail.com">russellbolger06@gmail.com</a>
-        <button class="copy" type="button" data-copy="russellbolger06@gmail.com">
-          <i class="ph ph-copy" aria-hidden="true"></i><span>Copy</span>
-        </button>
+        <a class="email" href="mailto:russellbolger06@gmail.com">russellbolger06@gmail.com</a>
+        <button class="copy" type="button" data-copy="russellbolger06@gmail.com">Copy</button>
       </div>
       <ul class="socials reveal">
-        <li><a href="Russell_Bolger_CV.pdf" target="_blank" rel="noopener"><i class="ph ph-file-pdf" aria-hidden="true"></i>CV</a></li>
-        <li><a href="https://www.linkedin.com/in/russell-bolger-87343524b/" rel="noopener"><i class="ph ph-linkedin-logo" aria-hidden="true"></i>LinkedIn</a></li>
-        <li><a href="https://github.com/bolgerru" rel="noopener"><i class="ph ph-github-logo" aria-hidden="true"></i>GitHub</a></li>
+        <li><a href="Russell_Bolger_CV.pdf" target="_blank" rel="noopener">CV</a></li>
+        <li><a href="https://www.linkedin.com/in/russell-bolger-87343524b/" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/bolgerru" rel="noopener">GitHub</a></li>
       </ul>
     </section>
   </main>
 
   <footer class="footer wrap">
-    <p class="mono muted">Russell Bolger, <span data-year>2026</span></p>
-    <p class="mono muted">Best viewed downwind.</p>
+    <p>Russell Bolger, <span data-year>2026</span></p>
+    <p>Best viewed downwind.</p>
   </footer>
+  <div class="neat"></div>
 
   <p class="sr-only" aria-live="polite" id="live"></p>
-  <script src="assets/main.js?v=c221c2e2" defer></script>
+  <script src="assets/main.js?v=chart3" defer></script>
 </body>
 </html>

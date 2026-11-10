@@ -6,15 +6,16 @@
   window.__rbReady = true;
   window.__rbBoot = true; // tells the <head> failsafe this script can run the boot overlay
 
-  // ---------- theme toggle (dark by default, choice remembered) ----------
+  // ---------- theme toggle (the chart's Day and Night palettes, choice remembered) ----------
   const toggle = document.querySelector('.theme-toggle');
-  const icon = toggle && toggle.querySelector('i');
   const themeColor = document.querySelector('meta[name="theme-color"]');
   const paintToggle = () => {
-    const dark = root.dataset.theme !== 'light';
-    if (icon) icon.className = dark ? 'ph ph-sun' : 'ph ph-moon';
-    if (toggle) toggle.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
-    if (themeColor) themeColor.setAttribute('content', dark ? '#0b0c0e' : '#f4f5f6');
+    const dark = root.dataset.theme === 'dark';
+    if (toggle) {
+      toggle.textContent = dark ? 'Day' : 'Night';
+      toggle.setAttribute('aria-label', dark ? 'Switch to day theme' : 'Switch to night theme');
+    }
+    if (themeColor) themeColor.setAttribute('content', dark ? '#091316' : '#eef0e3');
   };
   paintToggle();
   toggle && toggle.addEventListener('click', () => {
@@ -23,76 +24,36 @@
     paintToggle();
   });
 
-  // ---------- boot sequence: a short terminal start-up, then a wipe up ----------
+  // ---------- boot: the course is plotted mark by mark, then a wipe up ----------
   // The overlay is switched on before first paint by the inline script in <head>
-  // (html.boot-on), so the page never flashes underneath. Any click, key, scroll
-  // or tap skips it. Reduced-motion users never see it.
+  // (html.boot-on), so the page never flashes underneath. The drawing itself is
+  // CSS. Any click, key, scroll or tap skips it. Reduced-motion users never see it.
   const runBoot = () => new Promise((resolve) => {
     const boot = document.querySelector('.boot');
     if (!boot || reduce || !root.classList.contains('boot-on')) {
       root.classList.remove('boot-on');
       return resolve();
     }
-    const log = boot.querySelector('.boot-log');
-    const timers = [];
-    const later = (fn, ms) => timers.push(setTimeout(fn, ms));
     const skipEvents = ['pointerdown', 'keydown', 'wheel', 'touchstart'];
     let finished = false;
-
     const finish = () => {
       if (finished) return;
       finished = true;
-      timers.forEach(clearTimeout);
       skipEvents.forEach((e) => window.removeEventListener(e, finish, true));
-      root.classList.add('boot-leaving');   // overlay wipes up, hero starts rising
+      root.classList.add('boot-leaving');   // overlay wipes up, hero arrives
       resolve();
       setTimeout(() => root.classList.remove('boot-on', 'boot-leaving'), 700);
     };
     skipEvents.forEach((e) => window.addEventListener(e, finish, { capture: true, passive: true }));
-
-    const prompt = 'russell@trinity:~$ ./boot --portfolio';
-    const steps = [
-      ['loading raceflow', '19 regattas'],
-      ['scoring races', '1,550'],
-      ['recording finishes', '9,300'],
-      ['loading first not last', 'live'],
-      ['reading economics', 'trinity'],
-    ];
-    const leader = (label) => `${label} ${'.'.repeat(Math.max(3, 26 - label.length - 1))} `;
-    const el = (cls, text) => { const s = document.createElement('span'); s.className = cls; s.textContent = text; return s; };
-
-    log.textContent = '';
-    const promptEl = el('b-prompt', '');
-    const cursor = el('caret', '');
-    log.append(promptEl, cursor);
-
-    // Paced to be read: ~0.9s typing, a beat, one line every 360ms (each ticks
-    // to [ ok ] after 220ms), then a pause on "ready." before the wipe. ~4.2s.
-    const TYPE = 24, PAUSE = 300, LINE = 360, TICK = 220, HOLD = 800;
-    let t = 250;
-    for (let i = 1; i <= prompt.length; i++) later(() => { promptEl.textContent = prompt.slice(0, i); }, (t += TYPE));
-    t += PAUSE;
-    steps.forEach(([label, value]) => {
-      later(() => {
-        const tag = el('b-tag', '[ .. ] ');
-        const line = document.createElement('span');
-        line.append('\n', tag, leader(label), el('b-val', value));
-        log.insertBefore(line, cursor);
-        later(() => { tag.textContent = '[ ok ] '; tag.classList.add('ok'); }, TICK);
-      }, t);
-      t += LINE;
-    });
-    later(() => log.insertBefore(el('b-ready', '\nready.'), cursor), (t += 150));
-    later(finish, t + HOLD);
-    setTimeout(finish, 9000); // hard cap, whatever happens
+    setTimeout(finish, 2000);
   });
 
-  // ---------- name decode: one short pass, sets the terminal tone ----------
+  // ---------- name decode: one short pass of depth figures resolving to the name ----------
   const decodeName = () => {
     const scramble = document.querySelector('[data-scramble]');
     if (!scramble || reduce) return;
     const target = scramble.textContent;
-    const glyphs = '!<>-_/[]{}=+*^?#01';
+    const glyphs = '0123456789';
     scramble.setAttribute('aria-label', target);
     let frame = 0;
     const total = 26;
@@ -157,22 +118,18 @@
   // ---------- copy email ----------
   const live = document.getElementById('live');
   document.querySelectorAll('[data-copy]').forEach((btn) => {
-    const label = btn.querySelector('span');
-    const glyph = btn.querySelector('i');
     btn.addEventListener('click', async () => {
       try {
         await navigator.clipboard.writeText(btn.dataset.copy);
         btn.classList.add('done');
-        label.textContent = 'Copied';
-        glyph.className = 'ph ph-check';
+        btn.textContent = 'Copied';
         if (live) live.textContent = 'Email address copied';
       } catch (e) {
-        label.textContent = 'Press Ctrl+C';
+        btn.textContent = 'Press Ctrl+C';
       }
       setTimeout(() => {
         btn.classList.remove('done');
-        label.textContent = 'Copy';
-        glyph.className = 'ph ph-copy';
+        btn.textContent = 'Copy';
       }, 2000);
     });
   });
